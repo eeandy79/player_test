@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<title>AWS Player Test</title>
+	</head>
+	<body class="text-primary">
+		<form method="POST" class="ml-1 mt-1 mb-2">
+			<input type="submit" name="list_region_names" value="List Region Names" class="btn btn-outline-primary btn-sm">
+			<input type="submit" name="list_region_raws" value="List Region Raws" class="btn btn-outline-primary btn-sm">
+			<input type="submit" name="list_instances" value="List Running Instances" class="btn btn-outline-primary btn-sm">
+			<input type="submit" name="terminate_instances" value="Terminate Instances" class="btn btn-outline-primary btn-sm">
+		</form>
+		<small>
+		{{ table }}
+		</small>
+		{% for region in region_raws %}
+			<div>{{region}}</div>
+		{% endfor %}
+	</body>
+</html>
