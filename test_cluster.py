@@ -110,17 +110,19 @@ def job(baseurl, num_player, eventurl, duration):
 	print(response)
 
 ### Test environment variable ###
-#cluster = ['ap-east-1', 'ap-southeast-1', 'ap-northeast-1', 'ap-northeast-2']
-#region_us = ['us-east-1', 'us-east-2', 'us-west-1', 'us-west-2']
+region_asia = ['ap-east-1', 'ap-northeast-1', 'ap-northeast-2']
+region_us = ['us-east-1', 'us-west-1']
 #cluster = ['ap-east-1']       # Hong Kong
 #cluster = ['ap-northeast-1']  # Tokyo
 #cluster = ['ap-northeast-2']  # Seoul
 #cluster = ['ap-southeast-1']  # Singapore # !!!!! not good !!!!!
-#cluster = ['ap-southeast-2']  # Sydney # !!!!! failure !!!!!
+#cluster = ['ap-southeast-2']  # Sydney    # !!!!! failure !!!!!
 #cluster = ['us-east-1']       # Virginia
 #cluster = ['us-east-2']       # Ohio
-cluster = ['us-west-1']       # California
-#cluster = ['us_west-2']       # Oregon
+#cluster = ['us-west-1']       # California
+#cluster = ['us_west-2']       # Oregon    # !!!!! invalid endpoint !!!!! 
+
+cluster = region_asia + region_us
 
 num_player_per_node = 32 #38 # number of player per node
 duration = 60 # test duration

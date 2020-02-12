@@ -82,7 +82,7 @@ def main():
 	region_asia  = ['ap-east-1', 'ap-southeast-1', 'ap-southeast-2', 'ap-northeast-1', 'ap-northeast-2']
 	region_us = ['us-east-1', 'us-east-2', 'us-west-1', 'us-west-2']
 
-	cluster = region_us
+	cluster = ['us-east-1']
 	region_ami = {key: None for key in cluster}
 
 	# windows ami images (don't use)
@@ -116,8 +116,8 @@ def main():
 	response = []
 	for region_name in cluster:
 		image_id = region_ami[region_name];
-		response = create_spot_instances(region_name, image_id, instance_type, keypair_name, count)
-		#response = create_ondemand_instances(region_name, image_id, instance_type, keypair_name, count)
+		#response = create_spot_instances(region_name, image_id, instance_type, keypair_name, count)
+		response = create_ondemand_instances(region_name, image_id, instance_type, keypair_name, count)
 
 
 if __name__ == '__main__':
