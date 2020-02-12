@@ -40,7 +40,9 @@ def about():
 @app.route('/', methods=['POST'])
 def my_form_post():
 	### system variables ###
-	cluster = ['ap-east-1', 'ap-southeast-1', 'ap-southeast-2', 'ap-northeast-1', 'ap-northeast-2']
+	region_asia = ['ap-east-1', 'ap-southeast-1', 'ap-southeast-2', 'ap-northeast-1', 'ap-northeast-2']
+	region_us = ['us-east-1', 'us-east-2', 'us-west-1', 'us-west-2']
+	cluster = region_asia + region_us
 
 	if 'list_region_names' in request.form:
 		ec2 = boto3.client('ec2')

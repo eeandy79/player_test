@@ -3,7 +3,8 @@ from aws_helper import deleteTest
 from aws_helper import describe_region_instances
 import json
 
-cluster = ['ap-east-1', 'ap-southeast-1']
+cluster = ['ap-east-1', 'ap-southeast-1', 'ap-northeast-1', 'ap-northeast-2']
+#cluster = ['ap-east-1', 'ap-southeast-2']
 ips = []
 for region in cluster:
 	response = describe_region_instances(region)
